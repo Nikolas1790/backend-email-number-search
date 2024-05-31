@@ -21,14 +21,3 @@ mongoose.connect(DB_HOST)
     process.exit(1);
   });
 
-
-
-
-
-// import express from "express";
-
-
-
-// const app = express();
-
-// app.listen(4000, () => console.log("hello world"))
