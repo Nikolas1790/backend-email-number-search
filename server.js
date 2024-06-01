@@ -1,9 +1,6 @@
 // 9toZMwxUBwtb8YY9
 // mongodb+srv://Nik:<password>@cluster0.rj2x8xl.mongodb.net/
 
-// mongodb+srv://Nik:9toZMwxUBwtb8YY9@cluster0.rj2x8xl.mongodb.net/my-contacts?retryWrites=true&w=majority&appName=Cluster0
-
-
 import mongoose from "mongoose";
 import app from "./app.js";
 
@@ -20,4 +17,3 @@ mongoose.connect(DB_HOST)
     console.log(error.message);
     process.exit(1);
   });
-

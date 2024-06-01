@@ -1,15 +1,15 @@
 import ctrlWrapper from "../decorators/ctrlWrapper.js";
 import  Customer  from "../models/Customers.js ";
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const getCustomers = async (req, res) => {
   const result = await Customer.find();
-  // console.log(result);
-  res.json({
-    message: "Hello, this is a simple task!",
-  });
+  res.json(result);
 };
 
 const getCustomerInf = async (req, res) => {
+  await delay(10000);
   const { customerId } = req.params;
   const customer = await Customer.findById(customerId);
   if (!customer) {

@@ -11,7 +11,7 @@ const Customer = model("contacts", customerSchema);
 export default Customer;
 
 
-export const customerJoiSchema = Joi.object({
-  name: Joi.string().required(),
-  phone: Joi.number().required()
-});
+// export const customerJoiSchema = Joi.object({
+//   name: Joi.string().required(),
+//   phone: Joi.number().required()
+// });
