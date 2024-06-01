@@ -3,7 +3,7 @@ import dataControler from "../controllers/data-controler.js";
 
 const dataRouter = express.Router();
 
-dataRouter.get("/",  dataControler.getMunthDashboard);
-
+dataRouter.get("/",  dataControler.getCustomers);
+dataRouter.get("/:customerId",  dataControler.getCustomerInf);
 
 export default dataRouter;
