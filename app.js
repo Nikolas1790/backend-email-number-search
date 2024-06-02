@@ -1,6 +1,4 @@
 import express from "express";
-
-
 import "dotenv/config";
 import logger from "morgan";
 import cors from "cors";
@@ -12,7 +10,7 @@ const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 app.use(logger(formatsLogger));
 app.use(cors());
-// app.use(express.json());
+app.use(express.json());
 app.use("/api/contacts", dataRouter);
 
 app.use((req, res) => {

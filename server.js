@@ -1,11 +1,9 @@
-// 9toZMwxUBwtb8YY9
-// mongodb+srv://Nik:<password>@cluster0.rj2x8xl.mongodb.net/
 
 import mongoose from "mongoose";
 import app from "./app.js";
 
 const { DB_HOST, PORT } = process.env;
-console.log(DB_HOST)
+// console.log()
 mongoose.connect(DB_HOST)
   .then(() => {
     app.listen(PORT, () => {
