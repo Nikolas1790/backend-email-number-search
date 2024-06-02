@@ -9,17 +9,6 @@ const getCustomers = async (req, res) => {
   res.json(result);
 };
 
-const getCustomerInf = async (req, res) => {
-  await delay(50000);
-  const { customerId } = req.params;
-  console.log("ddddddddddddddddddddddddd", customerId)
-  const customer = await Customer.findById(customerId);
-  if (!customer) {
-    return res.status(404).json({ message: "Customer not found" });
-  }
-  res.json(customer);
-};
-
 const getCustomer = async (req, res) => {
   await delay(5000); 
   const { email } = req.query;
@@ -33,6 +22,5 @@ const getCustomer = async (req, res) => {
 };
 export default {
   getCustomers: ctrlWrapper(getCustomers),
-  getCustomerInf: ctrlWrapper(getCustomerInf), 
   getCustomer: ctrlWrapper(getCustomer),
 };
