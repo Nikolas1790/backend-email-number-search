@@ -1,13 +1,15 @@
 import { Schema, model } from "mongoose";
 
+const emailShema= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 const customerSchema = new Schema({
   email: { 
     type: String,
-     required: true
-    }, 
+    required: true,
+    match: [emailShema, "Invalid email format"],
+  }, 
   phone: { 
     type: String,
-    required: true,
     match: [/^\d{6}$/, "Phone number must be a 6-digit number."],
   }, 
 }, { versionKey: false, timestamps: false }); 
