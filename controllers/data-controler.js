@@ -3,8 +3,6 @@ import  Customer  from "../models/Customers.js ";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-
-
 const getCustomers = async (req, res) => {
   const result = await Customer.find();
   console.log("jjjjjjjjjjjjjjjjj")
@@ -23,7 +21,7 @@ const getCustomerInf = async (req, res) => {
 };
 
 const getCustomer = async (req, res) => {
-  // await delay(5000); 
+  await delay(5000); 
   const { email } = req.query;
   const query = {};
   if (email) query.email = email;
