@@ -19,7 +19,7 @@ const getCustomers = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     const result = yield Customers_1.default.find();
     res.json(result);
 });
-const getCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const postCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     yield delay(5000);
     const { email } = req.body;
     const emailString = typeof email === 'string' ? email : '';
@@ -31,5 +31,5 @@ const getCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
 });
 exports.default = {
     getCustomers: (0, ctrlWrapper_js_1.default)(getCustomers),
-    getCustomer: (0, ctrlWrapper_js_1.default)(getCustomer),
+    postCustomer: (0, ctrlWrapper_js_1.default)(postCustomer),
 };

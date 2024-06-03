@@ -1,4 +1,5 @@
 import { Schema, model, Document } from "mongoose";
+import Joi from "joi";
 
 interface ICustomer extends Document {
   email: string;
@@ -21,3 +22,8 @@ const customerSchema = new Schema({
 
 const Customer = model<ICustomer>("contacts", customerSchema);
 export default Customer;
+
+export const customerJoiSchema = Joi.object({
+  email: Joi.string().pattern(emailShema).required(),
+  phone: Joi.string().pattern(/^\d{6}$/),
+});
