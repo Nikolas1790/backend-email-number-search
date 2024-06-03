@@ -1,6 +1,6 @@
 import express from "express";
-import dataControler from "../controllers/data-controler.js";
-import {cancelPreviousRequest} from "../middlewares/index.js";
+import dataControler from "../controllers/data-controler";
+import {cancelPreviousRequest} from "../middlewares/index";
 
 const dataRouter = express.Router();
 

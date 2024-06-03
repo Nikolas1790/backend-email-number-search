@@ -1,6 +1,8 @@
-let previousRequest = null;
+import  { Request, Response, NextFunction }  from "express";
 
-const cancelPreviousRequest = (req, res, next) => {
+let previousRequest: NodeJS.Timeout | null;
+
+const cancelPreviousRequest = (req: Request, res: Response, next: NextFunction) => {
   if (previousRequest) {
     clearTimeout(previousRequest);
   }

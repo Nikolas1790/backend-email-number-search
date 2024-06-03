@@ -1,4 +1,9 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Document } from "mongoose";
+
+interface ICustomer extends Document {
+  email: string;
+  phone?: string;
+}
 
 const emailShema= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -14,5 +19,5 @@ const customerSchema = new Schema({
   }, 
 }, { versionKey: false, timestamps: false }); 
 
-const Customer = model("contacts", customerSchema);
+const Customer = model<ICustomer>("contacts", customerSchema);
 export default Customer;

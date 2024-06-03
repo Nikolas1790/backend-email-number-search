@@ -3,6 +3,11 @@ import app from "./app.js";
 
 const { DB_HOST, PORT } = process.env;
 
+if (!DB_HOST) {
+  console.error('DB_HOST is not defined in environment variables');
+  process.exit(1);
+}
+
 mongoose.connect(DB_HOST)
   .then(() => {
     app.listen(PORT, () => {

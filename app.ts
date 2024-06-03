@@ -1,9 +1,9 @@
-import express from "express";
+import express, { Request, Response, NextFunction }  from "express";
 import "dotenv/config";
 import logger from "morgan";
 import cors from "cors";
 
-import dataRouter from "./routes/data-routers.js";
+import dataRouter from "./routes/data-routers";
 
 const app = express();
 
@@ -16,9 +16,9 @@ app.use((req, res) => {
   res.status(404).json({ message: "Not found path" });
 });
 
-app.use((err, req, res, next) => {
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.log(err);
-  res.status(err.status || 500).json({ message: err.message });
+  res.status(err.status ?? 500).json({ message: err.message });
 });
 
 export default app;
