@@ -8,5 +8,5 @@ const data_controler_1 = __importDefault(require("../controllers/data-controler"
 const index_1 = require("../middlewares/index");
 const dataRouter = express_1.default.Router();
 dataRouter.get("/", data_controler_1.default.getCustomers);
-dataRouter.get('/customer', index_1.cancelPreviousRequest, data_controler_1.default.getCustomer);
+dataRouter.post("/customer", index_1.cancelPreviousRequest, data_controler_1.default.getCustomer);
 exports.default = dataRouter;

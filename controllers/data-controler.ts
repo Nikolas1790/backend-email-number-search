@@ -9,9 +9,9 @@ const getCustomers = async (req: Request, res: Response,) => {
   res.json(result);
 };
 
-const getCustomer = async (req: Request, res: Response,) => {
+const postCustomer = async (req: Request, res: Response,) => {
   await delay(5000); 
-  const { email } = req.query;
+  const { email } = req.body;
   const emailString = typeof email === 'string' ? email : '';
   const query =  { email: emailString };
   if (email) query.email = email.toString();
@@ -22,5 +22,5 @@ const getCustomer = async (req: Request, res: Response,) => {
 
 export default {
   getCustomers: ctrlWrapper(getCustomers),
-  getCustomer: ctrlWrapper(getCustomer),
+  postCustomer: ctrlWrapper(postCustomer),
 };

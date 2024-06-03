@@ -5,6 +5,6 @@ import {cancelPreviousRequest} from "../middlewares/index";
 const dataRouter = express.Router();
 
 dataRouter.get("/", dataControler.getCustomers);
-dataRouter.get('/customer',cancelPreviousRequest, dataControler.getCustomer);
+dataRouter.post("/customer", cancelPreviousRequest, dataControler.postCustomer);
 
 export default dataRouter;

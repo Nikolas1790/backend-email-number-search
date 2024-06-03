@@ -21,7 +21,7 @@ const getCustomers = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 });
 const getCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     yield delay(5000);
-    const { email } = req.query;
+    const { email } = req.body;
     const emailString = typeof email === 'string' ? email : '';
     const query = { email: emailString };
     if (email)
